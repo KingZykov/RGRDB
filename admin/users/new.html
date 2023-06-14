@@ -1,0 +1,169 @@
+  <html>
+    <head>
+    <meta charset="utf-8">
+        <title> Добавить нового пользователя </title>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@100;200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+
+    <body>
+
+
+        <div class="wrapper" >
+            <main class="main">
+                <h2>Регистрация:</h2>
+                <form action="save_new.php" metod="get" id="forma">
+                    <div class="inputs">
+                        <div class="inpt__cont">
+                            <label>ID:</label> <input name="id1" size="50" type="number">
+                            <p class="error hidden">>0</p>
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>Name:</label> <input name="name" size="50" type="text" title="Use english letter only">
+                            <p class="error hidden">Используйте только латинские символы</p>
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>Login:</label> <input name="login" size="20" type="text">
+                            <p class="error hidden">Используйте только латинские символы</p>
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>Password:</label> <input name="password" size="20" type="password">
+                            <p class="error hidden">>3</p>
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>E-mail:</label> <input name="e_mail" size="30" type="text">
+                            <p class="error hidden"> @ и .</p>
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>Info:</label> <textarea name="info" rows="4" cols="40"> </textarea>
+                        </div>
+                    </div>
+
+                    <div class="inpt__cont">
+                        <div class="button" style="position: relative;"><input name="add" type="submit" value="Add"><div class="block"></div></div>
+                        <input name="b2" type="reset" value="Clear">
+                    </div>
+                </form>
+                <a href="index.php" class='btn'> Вернуться к списку пользователей </a>
+                <a href="../index.php" class='btn'> Вернуться на главную </a>
+            </main>
+        </div>
+        <script>
+            let forma = document.querySelector('#forma');
+            let elements = forma.elements;
+            let btnAdd = document.querySelector('[name="add"]');
+            const button = document.querySelector('.button');
+            const block = document.querySelector('.block');
+            // Блок кнопки
+            btnAdd.setAttribute('disabled', 'true');
+
+            f0 = false;
+            elements[0].addEventListener('input', function(){
+                if(parseInt(elements[0].value) >= 0){
+                    f0 = true;
+                } else{
+                    f0 = false;
+                }
+                console.log(f0)
+                if(f0 === false){
+                    elements[0].nextElementSibling.classList.remove('hidden');
+                }else{
+                    elements[0].nextElementSibling.classList.add('hidden');
+                }
+            })
+
+            f1 = false;
+            elements[1].addEventListener('input', function(){
+                for(let i = 0; i < elements[1].value.length; i++){
+                    if(elements[1].value.charCodeAt(i) >= 65 && elements[1].value.charCodeAt(i) <= 133){
+                        f1 = true;
+                    }
+                    else {
+                        f1 = false;
+                        break;
+                    }
+                }
+                console.log(f1);
+                if(f1 === false){
+                    elements[1].nextElementSibling.classList.remove('hidden');
+                }else{
+                    elements[1].nextElementSibling.classList.add('hidden');
+                }
+            })
+
+            f2 = false;
+            elements[2].addEventListener('input', function(){
+                for(let i = 0; i < elements[2].value.length; i++){
+                    if(elements[2].value.charCodeAt(i) >= 65 && elements[2].value.charCodeAt(i) <= 133){
+                        f2 = true;
+                    }
+                    else {
+                        f2 = false;
+                        break;
+                    }
+                }
+                console.log(f2);
+                if(f2 === false){
+                    elements[2].nextElementSibling.classList.remove('hidden');
+                }else{
+                    elements[2].nextElementSibling.classList.add('hidden');
+                }
+            })
+
+
+            f3 = false;
+            elements[3].addEventListener('input', function(){
+                if(elements[3].value.length <= 3){
+                    f3 = false;
+                } else {
+                    f3 = true;
+                }
+                console.log(f3);
+                if(f3 === false){
+                    elements[3].nextElementSibling.classList.remove('hidden');
+                }else{
+                    elements[3].nextElementSibling.classList.add('hidden');
+                }
+            })
+
+            f4 = false;
+            elements[4].addEventListener('input', function(){
+                if(elements[4].value.includes('@') && elements[4].value.includes('.')){
+                    f4 = true;
+                } else{
+                    f4 = false;
+                }
+                console.log(f4);
+                if(f4 === false){
+                    elements[4].nextElementSibling.classList.remove('hidden');
+                }else{
+                    elements[4].nextElementSibling.classList.add('hidden');
+                }
+            })
+
+            block.addEventListener('mouseover', function(){
+                if(f0 === true && f1 === true && f2 === true && f3 === true && f4 === true){
+                    btnAdd.removeAttribute('disabled');
+                }else{
+                    btnAdd.setAttribute('disabled', 'true');
+                }
+            })
+            btnAdd.addEventListener('click', function(){
+                console.log(213);
+            })
+
+            block.addEventListener('click', function(){
+                btnAdd.click();
+            })
+
+
+        </script>
+    </body>
+</html>

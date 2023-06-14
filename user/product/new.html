@@ -1,0 +1,51 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+        <title> Добавление новых продуктов </title>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@100;200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+
+    <body>
+
+        <div class="wrapper">
+            <main class="main">
+                <h2>Добавление новых продуктов:</h2>
+                <form action="save_new.php" metod="get">
+                    <div class="inputs">
+
+                        <div class="inpt__cont">
+                            <label>product_code_ID:</label> <input name="product_code_ID" size="50" type="text">
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>product_name:</label> <input name="product_name" size="20" type="text">
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>product_trademark:</label> <input name="product_trademark" size="20" type="text">
+                        </div>
+
+                        <div class="inpt__cont">
+                            <label>product_manufacturer:</label> <input name="product_manufacturer" size="30" type="text">
+                        </div>
+
+                        <div class='inpt__cont'>
+                            <label>product_retail_price:</label><input name='product_retail_price' size='30' type='text'>
+                        </div>
+
+                    </div>
+
+                    <div class="inpt__cont">
+                        <input name="add" type="submit" value="Добавить">
+                        <input name="b2" type="reset" value="Очистить">
+                    </div>
+                </form>
+                <a href="index.php"> Вернутся к списку продуктов </a>
+                <a href="../index.php"> Вернутся на главную страницу </a>
+            </main>
+        </div>
+    </body>
+</html>

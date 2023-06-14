@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title> SQL запрос </title>
+         <meta charset="utf-8">
+    </head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@100;200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style12.css">
+<meta charset="utf-8">
+
+    <body>
+
+
+        <div class="wrapper">
+            <main class="main">
+                <h2>Создай SQL запрос:</h2>
+                <form action="save_new.php" metod="get">
+                    <div class="inputs">
+                        <div class="inpt__cont">
+                            <div style="display:inline-block; align-self: center;">
+                                <input type="text" name="id1" id="" value="Select * from " style="width: 95px; height: 20px;" disabled>
+                                <select name="table9" id="table9" style="width: 90px; margin-left: -8px;">
+                                    <option value="invoice">invoice</option>
+                                    <option value="product">product</option>
+                                    <option value="receipt_invoice">receipt_invoice</option>
+                                </select>
+                                <!-- <div class="inpt__cont"> -->
+                                    <input name="add" type="submit" value="Показать результат" style="width: 80px; display:inline-block; margin-left: 20px;">
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="save_new2.php" metod="get">
+                    <div class="inputs">
+                        <div class="inpt__cont">
+                            <div style="display:inline-block; align-self: center;">
+                                <input type="text" name="id12" id="" value="SELECT * FROM `invoice` WHERE invoice_summ " style="width: 310px; height: 20px;" disabled>
+                                <select name="table12" style="width: 40px; margin-left: -8px;">
+                                    <option value=">">></option>
+                                    <option value="=">=</option>
+                                    <option value="<"><</option>
+                                </select>
+                                <input type="number" name="id13" id="" min="1" style="width: 70px; height: 20px;">
+                                <!-- <div class="inpt__cont"> -->
+                                    <input name="add" type="submit" value="Показать результат" style="width: 80px; display:inline-block; margin-left: 20px;">
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="save_new3.php" metod="get">
+                    <div class="inputs">
+                        <div class="inpt__cont">
+                            <div style="display:inline-block; align-self: center;">
+                                <input type="text" name="id14" id="" value="SELECT * FROM `product` WHERE product_manufacturer = " style="width: 380px; height: 20px;" disabled>
+                                <select name="table14" style="width: 120px; margin-left: -8px;">
+                                    <option value="manufacturer 1">manufacturer 1</option>
+                                    <option value="manufacturer 2">manufacturer 2</option>
+                                    <option value="manufacturer 3">manufacturer 3</option>
+                                    <option value="manufacturer 4">manufacturer 4</option>
+                                    <option value="manufacturer 5">manufacturer 5</option>
+                                    <option value="manufacturer 6">manufacturer 6</option>
+                                </select>
+                                <!-- <div class="inpt__cont"> -->
+                                    <input name="add" type="submit" value="Показать результат" style="width: 80px; display:inline-block; margin-left: 20px;">
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <a href="../index.php"> Вернуться на главную </a>
+            </main>
+        </div>
+    </body>
+</html>
